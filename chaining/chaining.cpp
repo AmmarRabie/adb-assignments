@@ -160,7 +160,7 @@ int insertItem(int fd, DataItem item){
 		mainBucket.recordPointer = -1;
 		mainBucket.valid = 1;
 		writeResult = pwrite(fd, &mainBucket, sizeof(Bucket), Offset);
-		return count;
+		return ++count;
 	}
 	int next = mainBucket.recordPointer; // next pointer to overflow bucket
 	if (next == -1) {
@@ -172,34 +172,22 @@ int insertItem(int fd, DataItem item){
 				return count;
 			}
 		}
-		// Nope this is the first element to be inserted in this bucket after it is full
-		int writeOffset = getFreeOffsetInOverflow(fd, &count);
-		if (writeOffset == -1) return -1; // no empty spaces
-
-		// update the main bucket
-		mainBucket.recordPointer = writeOffset;
-		writeResult = pwrite(fd, &mainBucket, sizeof(Bucket), startingOffset);
-
-		// write the new record
-		OverflowRecord newrecord;
-		newrecord.data = item.data; newrecord.key = item.key; newrecord.valid = 1; newrecord.next = -1;
-		writeResult = pwrite(fd, &newrecord, sizeof(OverflowRecord), writeOffset);
-		return count;
 	}
-	// here is no space in the main bucket, and there is overflow already exist
-	int lastRecordOffset;
-	OverflowRecord lastRecord = getLastRecordChain(fd, next, &lastRecordOffset, count);
+	// get empty space in the overflow
 	int writeOffset = getFreeOffsetInOverflow(fd, &count);
+	if (writeOffset == -1) return -1; // no empty spaces
 
-	// update the bucket pointers
-	lastRecord.next = writeOffset;
-	writeResult = pwrite(fd, &lastRecord, sizeof(OverflowRecord), lastRecordOffset);
-
-	// write the new record
+	// write the new record, point to first record in the old chain (even if null)
 	OverflowRecord newrecord;
-	newrecord.data = item.data; newrecord.key = item.key; newrecord.valid = 1; newrecord.next = -1;
+	newrecord.data = item.data;
+	newrecord.key = item.key;
+	newrecord.valid = 1;
+	newrecord.next = next;
 	writeResult = pwrite(fd, &newrecord, sizeof(OverflowRecord), writeOffset);
 
+	// update the main bucket, point to new record
+	mainBucket.recordPointer = writeOffset;
+	writeResult = pwrite(fd, &mainBucket, sizeof(Bucket), startingOffset);
 	return count;
 }
 
@@ -239,7 +227,7 @@ int searchItem(int fd, struct DataItem* item, int *count)
 		(*count)++;
 		if (currentRecord.valid == 1 && currentRecord.key == item->key) {
 			item->data = currentRecord.data;
-			return (*count);
+			return Offset + i * sizeof(DataItem);
 		}
 	}
 	// not in the main bucket
@@ -332,21 +320,21 @@ int deleteOffset(int fd, int Offset)
 		int bucketOffset = (Offset / BUCKETSIZE) * BUCKETSIZE;
 		int recordIndex = (Offset - bucketOffset) / sizeof(DataItem);
 		Bucket b = readMainBucket(fd, bucketOffset);
-		if (b.recordPointer != -1) {
-			// there is a pointer, get the first one and put it in the empty space, make the recordPointer of the bucket point to the pointer of record pointer of the this first one
-			OverflowRecord overflowRecord;
-			readResult = pread(fd, &overflowRecord, sizeof(OverflowRecord), b.recordPointer);
-			b.recordPointer = overflowRecord.next;
+		// if (b.recordPointer != -1) {
+		// 	// there is a pointer, get the first one and put it in the empty space, make the recordPointer of the bucket point to the pointer of record pointer of the this first one
+		// 	OverflowRecord overflowRecord;
+		// 	readResult = pread(fd, &overflowRecord, sizeof(OverflowRecord), b.recordPointer);
+		// 	b.recordPointer = overflowRecord.next;
+		// 	b.dataItem[recordIndex] = overflowRecord;
+		// 	writeResult = pwrite(fd, &b, sizeof(Bucket), bucketOffset);
+		// 	if (writeResult == -1) return -1;
+		// }
+		if(b.recordPointer != -1){
+			auto overflowRecord = readOverflowRecord(fd, b.recordPointer);
 			b.dataItem[recordIndex] = overflowRecord;
-			writeResult = pwrite(fd, &b, sizeof(Bucket), bucketOffset);
-			if (writeResult == -1) return -1;
+			b.recordPointer = overflowRecord.next;
+			return pwrite(fd, &b, sizeof(Bucket), bucketOffset);
 		}
-		DataItem dummyMainRecordItem;
-		dummyMainRecordItem.valid = 0;
-		dummyMainRecordItem.key = -1;
-		dummyMainRecordItem.data = 0;
-		writeResult = pwrite(fd, &dummyMainRecordItem, sizeof(DataItem), Offset);
-		return writeResult;
 	}
 	dummyItem.valid = 0;
 	dummyItem.key = -1;
