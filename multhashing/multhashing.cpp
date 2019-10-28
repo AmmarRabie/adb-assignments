@@ -14,7 +14,7 @@ const int FILESIZE = BUCKETSIZE*MBUCKETS;
 
 int hashCode(int key, bool collision = false){
 	int firstHash = key % MBUCKETS;
-	if (collision) return (firstHash + (7 - key % 7) + 1) % MBUCKETS; // shift from old location by [1-7] depending on key
+	if (collision) return (firstHash + (7 - key % 7)) % MBUCKETS; // shift from old location by [1-6] depending on key
 	return firstHash;
 }
 
