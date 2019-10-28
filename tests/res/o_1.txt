@@ -1,0 +1,150 @@
+* view file operation
+Bucket: 0, Offset: 0, ~
+Bucket: 0, Offset: 12, ~
+Bucket: 1, Offset: 24, ~
+Bucket: 1, Offset: 36, ~
+Bucket: 2, Offset: 48, ~
+Bucket: 2, Offset: 60, ~
+Bucket: 3, Offset: 72, ~
+Bucket: 3, Offset: 84, ~
+Bucket: 4, Offset: 96, ~
+Bucket: 4, Offset: 108, ~
+Bucket: 5, Offset: 120, ~
+Bucket: 5, Offset: 132, ~
+Bucket: 6, Offset: 144, ~
+Bucket: 6, Offset: 156, ~
+Bucket: 7, Offset: 168, ~
+Bucket: 7, Offset: 180, ~
+Bucket: 8, Offset: 192, ~
+Bucket: 8, Offset: 204, ~
+Bucket: 9, Offset: 216, ~
+Bucket: 9, Offset: 228, ~
+================================================
+
+* insert operation of 1, 20
+Insert: No. of searched records 1
+================================================
+
+* insert operation of 6, 70
+Insert: No. of searched records 1
+================================================
+
+* insert operation of 42, 80
+Insert: No. of searched records 1
+================================================
+
+* insert operation of 4, 25
+Insert: No. of searched records 1
+================================================
+
+* insert operation of 12, 44
+Insert: No. of searched records 2
+================================================
+
+* insert operation of 14, 32
+Insert: No. of searched records 2
+================================================
+
+* insert operation of 17, 11
+Insert: No. of searched records 1
+================================================
+
+* insert operation of 13, 78
+Insert: No. of searched records 1
+================================================
+
+* insert operation of 37, 97
+Insert: No. of searched records 2
+================================================
+
+* insert operation of 11, 34
+Insert: No. of searched records 2
+================================================
+
+* insert operation of 22, 730
+Insert: No. of searched records 4
+================================================
+
+* insert operation of 46, 840
+Insert: No. of searched records 2
+================================================
+
+* insert operation of 9, 83
+Insert: No. of searched records 1
+================================================
+
+* insert operation of 21, 424
+Insert: No. of searched records 9
+================================================
+
+* insert operation of 41, 115
+Insert: No. of searched records 10
+================================================
+
+* insert operation of 71, 47
+Insert: No. of searched records 15
+================================================
+
+* insert operation of 31, 92
+Insert: No. of searched records 16
+================================================
+
+* insert operation of 73, 45
+Insert: No. of searched records 14
+================================================
+
+* view file operation
+Bucket: 0, Offset: 0, ~
+Bucket: 0, Offset: 12, ~
+Bucket: 1, Offset: 24Data: 20, key: 1
+Bucket: 1, Offset: 36Data: 34, key: 11
+Bucket: 2, Offset: 48Data: 80, key: 42
+Bucket: 2, Offset: 60Data: 44, key: 12
+Bucket: 3, Offset: 72Data: 78, key: 13
+Bucket: 3, Offset: 84Data: 730, key: 22
+Bucket: 4, Offset: 96Data: 25, key: 4
+Bucket: 4, Offset: 108Data: 32, key: 14
+Bucket: 5, Offset: 120Data: 424, key: 21
+Bucket: 5, Offset: 132Data: 115, key: 41
+Bucket: 6, Offset: 144Data: 70, key: 6
+Bucket: 6, Offset: 156Data: 840, key: 46
+Bucket: 7, Offset: 168Data: 11, key: 17
+Bucket: 7, Offset: 180Data: 97, key: 37
+Bucket: 8, Offset: 192Data: 47, key: 71
+Bucket: 8, Offset: 204Data: 92, key: 31
+Bucket: 9, Offset: 216Data: 83, key: 9
+Bucket: 9, Offset: 228Data: 45, key: 73
+================================================
+
+* search operation of 13
+Search: No of records searched is 1
+Item found at Offset: 72,  Data: 78 and key: 13
+================================================
+
+* delete operation of 31
+Delete: No of records searched is 16
+================================================
+
+* view file operation
+Bucket: 0, Offset: 0, ~
+Bucket: 0, Offset: 12, ~
+Bucket: 1, Offset: 24Data: 20, key: 1
+Bucket: 1, Offset: 36Data: 34, key: 11
+Bucket: 2, Offset: 48Data: 80, key: 42
+Bucket: 2, Offset: 60Data: 44, key: 12
+Bucket: 3, Offset: 72Data: 78, key: 13
+Bucket: 3, Offset: 84Data: 730, key: 22
+Bucket: 4, Offset: 96Data: 25, key: 4
+Bucket: 4, Offset: 108Data: 32, key: 14
+Bucket: 5, Offset: 120Data: 424, key: 21
+Bucket: 5, Offset: 132Data: 115, key: 41
+Bucket: 6, Offset: 144Data: 70, key: 6
+Bucket: 6, Offset: 156Data: 840, key: 46
+Bucket: 7, Offset: 168Data: 11, key: 17
+Bucket: 7, Offset: 180Data: 97, key: 37
+Bucket: 8, Offset: 192Data: 47, key: 71
+Bucket: 8, Offset: 204, ~
+Bucket: 9, Offset: 216Data: 83, key: 9
+Bucket: 9, Offset: 228Data: 45, key: 73
+================================================
+
