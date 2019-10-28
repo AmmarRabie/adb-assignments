@@ -159,7 +159,7 @@ int DisplayFile(int fd, ostream& out){
 			out << "Bucket: " << Offset/BUCKETSIZE << ", Offset: " << Offset << ", ~" << endl;
 		} else {
 			pread(fd,&data,sizeof(DataItem), Offset);
-			out << "Bucket: " << Offset/BUCKETSIZE << ", Offset: " << Offset << "Data: " << data.data << ", key: " << data.key << endl;
+			out << "Bucket: " << Offset/BUCKETSIZE << ", Offset: " << Offset << " Data: " << data.data << ", key: " << data.key << endl;
 			count++;
 		}
 	}
