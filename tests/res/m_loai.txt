@@ -1,0 +1,149 @@
+* insert operation of 1, 12
+Insert: No. of searched records 1
+================================================
+
+* insert operation of 2, 12
+Insert: No. of searched records 1
+================================================
+
+* insert operation of 3, 12
+Insert: No. of searched records 1
+================================================
+
+* insert operation of 4, 12
+Insert: No. of searched records 1
+================================================
+
+* insert operation of 5, 12
+Insert: No. of searched records 1
+================================================
+
+* insert operation of 6, 12
+Insert: No. of searched records 1
+================================================
+
+* insert operation of 7, 12
+Insert: No. of searched records 1
+================================================
+
+* insert operation of 8, 12
+Insert: No. of searched records 1
+================================================
+
+* insert operation of 9, 12
+Insert: No. of searched records 1
+================================================
+
+* insert operation of 10, 12
+Insert: No. of searched records 1
+================================================
+
+* insert operation of 11, 12
+Insert: No. of searched records 2
+================================================
+
+* insert operation of 12, 12
+Insert: No. of searched records 2
+================================================
+
+* insert operation of 13, 12
+Insert: No. of searched records 2
+================================================
+
+* insert operation of 14, 12
+Insert: No. of searched records 2
+================================================
+
+* insert operation of 15, 12
+Insert: No. of searched records 2
+================================================
+
+* insert operation of 16, 12
+Insert: No. of searched records 2
+================================================
+
+* insert operation of 17, 12
+Insert: No. of searched records 2
+================================================
+
+* insert operation of 18, 12
+Insert: No. of searched records 2
+================================================
+
+* insert operation of 19, 12
+Insert: No. of searched records 2
+================================================
+
+* insert operation of 20, 12
+Insert: No. of searched records 2
+================================================
+
+* view file operation
+Bucket: 0, Offset: 0 Data: 12, key: 10
+Bucket: 0, Offset: 12 Data: 12, key: 20
+Bucket: 1, Offset: 24 Data: 12, key: 1
+Bucket: 1, Offset: 36 Data: 12, key: 11
+Bucket: 2, Offset: 48 Data: 12, key: 2
+Bucket: 2, Offset: 60 Data: 12, key: 12
+Bucket: 3, Offset: 72 Data: 12, key: 3
+Bucket: 3, Offset: 84 Data: 12, key: 13
+Bucket: 4, Offset: 96 Data: 12, key: 4
+Bucket: 4, Offset: 108 Data: 12, key: 14
+Bucket: 5, Offset: 120 Data: 12, key: 5
+Bucket: 5, Offset: 132 Data: 12, key: 15
+Bucket: 6, Offset: 144 Data: 12, key: 6
+Bucket: 6, Offset: 156 Data: 12, key: 16
+Bucket: 7, Offset: 168 Data: 12, key: 7
+Bucket: 7, Offset: 180 Data: 12, key: 17
+Bucket: 8, Offset: 192 Data: 12, key: 8
+Bucket: 8, Offset: 204 Data: 12, key: 18
+Bucket: 9, Offset: 216 Data: 12, key: 9
+Bucket: 9, Offset: 228 Data: 12, key: 19
+================================================
+
+* search operation of 1
+Search: No of records searched is 1
+Item found at Offset: 24,  Data: 12 and key: 1
+================================================
+
+* search operation of 6
+Search: No of records searched is 1
+Item found at Offset: 144,  Data: 12 and key: 6
+================================================
+
+* search operation of 10
+Search: No of records searched is 1
+Item found at Offset: 0,  Data: 12 and key: 10
+================================================
+
+* delete operation of 1
+Delete: No of records searched is 1
+================================================
+
+* delete operation of 6
+Delete: No of records searched is 1
+================================================
+
+* view file operation
+Bucket: 0, Offset: 0 Data: 12, key: 10
+Bucket: 0, Offset: 12 Data: 12, key: 20
+Bucket: 1, Offset: 24, ~
+Bucket: 1, Offset: 36 Data: 12, key: 11
+Bucket: 2, Offset: 48 Data: 12, key: 2
+Bucket: 2, Offset: 60 Data: 12, key: 12
+Bucket: 3, Offset: 72 Data: 12, key: 3
+Bucket: 3, Offset: 84 Data: 12, key: 13
+Bucket: 4, Offset: 96 Data: 12, key: 4
+Bucket: 4, Offset: 108 Data: 12, key: 14
+Bucket: 5, Offset: 120 Data: 12, key: 5
+Bucket: 5, Offset: 132 Data: 12, key: 15
+Bucket: 6, Offset: 144, ~
+Bucket: 6, Offset: 156 Data: 12, key: 16
+Bucket: 7, Offset: 168 Data: 12, key: 7
+Bucket: 7, Offset: 180 Data: 12, key: 17
+Bucket: 8, Offset: 192 Data: 12, key: 8
+Bucket: 8, Offset: 204 Data: 12, key: 18
+Bucket: 9, Offset: 216 Data: 12, key: 9
+Bucket: 9, Offset: 228 Data: 12, key: 19
+================================================
+

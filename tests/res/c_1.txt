@@ -17,7 +17,7 @@ Bucket: 4==>NULL
 ================================================
 
 * insert operation of 1, 20
-Insert: No. of searched records 0
+Insert: No. of searched records 1
 ================================================
 
 * insert operation of 6, 70
@@ -25,11 +25,11 @@ Insert: No. of searched records 2
 ================================================
 
 * insert operation of 42, 80
-Insert: No. of searched records 0
+Insert: No. of searched records 1
 ================================================
 
 * insert operation of 4, 25
-Insert: No. of searched records 0
+Insert: No. of searched records 1
 ================================================
 
 * insert operation of 12, 44
@@ -45,11 +45,11 @@ Insert: No. of searched records 3
 ================================================
 
 * insert operation of 13, 78
-Insert: No. of searched records 0
+Insert: No. of searched records 1
 ================================================
 
 * insert operation of 37, 97
-Insert: No. of searched records 3
+Insert: No. of searched records 2
 ================================================
 
 * insert operation of 11, 34
@@ -57,11 +57,11 @@ Insert: No. of searched records 5
 ================================================
 
 * insert operation of 22, 730
-Insert: No. of searched records 6
+Insert: No. of searched records 4
 ================================================
 
 * insert operation of 46, 840
-Insert: No. of searched records 6
+Insert: No. of searched records 5
 ================================================
 
 * insert operation of 9, 83
@@ -69,19 +69,19 @@ Insert: No. of searched records 8
 ================================================
 
 * insert operation of 21, 424
-Insert: No. of searched records 9
+Insert: No. of searched records 7
 ================================================
 
 * insert operation of 41, 115
-Insert: No. of searched records 11
+Insert: No. of searched records 8
 ================================================
 
 * insert operation of 71, 47
-Insert: No. of searched records 13
+Insert: No. of searched records 9
 ================================================
 
 * insert operation of 31, 92
-Insert: No. of searched records 15
+Insert: No. of searched records 10
 ================================================
 
 * insert operation of 73, 45
@@ -94,10 +94,10 @@ Bucket: 0, Offset: 12, ~
 Bucket: 0==>NULL
 Bucket: 1, Offset: 32, Data: 20, key: 1
 Bucket: 1, Offset: 44, Data: 70, key: 6
-Bucket: 1==>OF: 1.0 Offset: 192, Data: 34, key: 11==>OF: 2.0 Offset: 224, Data: 840, key: 46==>OF: 3.0 Offset: 256, Data: 424, key: 21==>OF: 3.1 Offset: 272, Data: 115, key: 41==>OF: 4.0 Offset: 288, Data: 47, key: 71==>OF: 4.1 Offset: 304, Data: 92, key: 31==>NULL
+Bucket: 1==>OF: 4.1 Offset: 304, Data: 92, key: 31==>OF: 4.0 Offset: 288, Data: 47, key: 71==>OF: 3.1 Offset: 272, Data: 115, key: 41==>OF: 3.0 Offset: 256, Data: 424, key: 21==>OF: 2.0 Offset: 224, Data: 840, key: 46==>OF: 1.0 Offset: 192, Data: 34, key: 11==>NULL
 Bucket: 2, Offset: 64, Data: 80, key: 42
 Bucket: 2, Offset: 76, Data: 44, key: 12
-Bucket: 2==>OF: 0.0 Offset: 160, Data: 11, key: 17==>OF: 0.1 Offset: 176, Data: 97, key: 37==>OF: 1.1 Offset: 208, Data: 730, key: 22==>NULL
+Bucket: 2==>OF: 1.1 Offset: 208, Data: 730, key: 22==>OF: 0.1 Offset: 176, Data: 97, key: 37==>OF: 0.0 Offset: 160, Data: 11, key: 17==>NULL
 Bucket: 3, Offset: 96, Data: 78, key: 13
 Bucket: 3, Offset: 108, Data: 45, key: 73
 Bucket: 3==>NULL
@@ -112,7 +112,7 @@ Item found at Offset: 1,  Data: 78 and key: 13
 ================================================
 
 * delete operation of 31
-Delete: No of records searched is 8
+Delete: No of records searched is 3
 ================================================
 
 * view file operation
@@ -121,10 +121,10 @@ Bucket: 0, Offset: 12, ~
 Bucket: 0==>NULL
 Bucket: 1, Offset: 32, Data: 20, key: 1
 Bucket: 1, Offset: 44, Data: 70, key: 6
-Bucket: 1==>OF: 1.0 Offset: 192, Data: 34, key: 11==>OF: 2.0 Offset: 224, Data: 840, key: 46==>OF: 3.0 Offset: 256, Data: 424, key: 21==>OF: 3.1 Offset: 272, Data: 115, key: 41==>OF: 4.0 Offset: 288, Data: 47, key: 71==>NULL
+Bucket: 1==>OF: 4.0 Offset: 288, Data: 47, key: 71==>OF: 3.1 Offset: 272, Data: 115, key: 41==>OF: 3.0 Offset: 256, Data: 424, key: 21==>OF: 2.0 Offset: 224, Data: 840, key: 46==>OF: 1.0 Offset: 192, Data: 34, key: 11==>NULL
 Bucket: 2, Offset: 64, Data: 80, key: 42
 Bucket: 2, Offset: 76, Data: 44, key: 12
-Bucket: 2==>OF: 0.0 Offset: 160, Data: 11, key: 17==>OF: 0.1 Offset: 176, Data: 97, key: 37==>OF: 1.1 Offset: 208, Data: 730, key: 22==>NULL
+Bucket: 2==>OF: 1.1 Offset: 208, Data: 730, key: 22==>OF: 0.1 Offset: 176, Data: 97, key: 37==>OF: 0.0 Offset: 160, Data: 11, key: 17==>NULL
 Bucket: 3, Offset: 96, Data: 78, key: 13
 Bucket: 3, Offset: 108, Data: 45, key: 73
 Bucket: 3==>NULL
