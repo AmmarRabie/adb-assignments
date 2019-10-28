@@ -13,8 +13,9 @@ const int BUCKETSIZE = sizeof(Bucket);
 const int FILESIZE = BUCKETSIZE*MBUCKETS;
 
 int hashCode(int key, bool collision = false){
-	if (collision) return (key * 7 * MBUCKETS) % MBUCKETS;
-	return key % MBUCKETS;
+	int firstHash = key % MBUCKETS;
+	if (collision) return (firstHash + (7 - key % 7) + 1) % MBUCKETS; // shift from old location by [1-7] depending on key
+	return firstHash;
 }
 
 /* Functionality insert the data item into the correct position
